@@ -1,9 +1,8 @@
-This is an opinionated [Next.js](https://nextjs.org/) project template bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). It contains other libraries and tools such as:
+This is an opinionated [Next.js](https://nextjs.org/) project template bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). It contains other libraries and tools that you most likely need such as:
 
 - [Typescript](https://www.typescriptlang.org/) for setting types for Javascript.
 - [TailwindCSS](https://tailwindcss.com/) for utility-based styling.
 - [styled-components](https://styled-components.com/) for a more customized approach of styling your components.
-- [styled-normalize](https://www.npmjs.com/package/styled-normalize) for normalizing CSS accross browsers.
 - [Prettier](https://prettier.io/) for basic code formatting every file save.
 
 These are the basic tools to get you started on developing a fuctional React web application that takes advatage of NextJS features without having to do all the setup by yourself. Happy coding!
