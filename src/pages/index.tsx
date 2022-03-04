@@ -5,7 +5,8 @@ const Home: NextPage = () => {
   return (
     <>
       <h1 className={styles.title}>
-        Welcome to <a href="https://nextjs.org">Next.js!</a>
+        Welcome to <a href="https://nextjs.org">Next.js</a> +{" "}
+        <a href="https://tailwindcss.com/">TailwindCSS!</a>
       </h1>
 
       <p className={styles.description}>
@@ -14,8 +15,13 @@ const Home: NextPage = () => {
 
       <div className={styles.grid}>
         <a href="https://nextjs.org/docs" className={styles.card}>
-          <h2>Documentation &rarr;</h2>
+          <h2>NextJs Documentation &rarr;</h2>
           <p>Find in-depth information about Next.js features and API.</p>
+        </a>
+
+        <a href="https://tailwindcss.com/docs/installation" className={styles.card}>
+          <h2>TailwindCSS Documentation &rarr;</h2>
+          <p>Find in-depth information about TailwindCSS features and plugins.</p>
         </a>
 
         <a href="https://nextjs.org/learn" className={styles.card}>
