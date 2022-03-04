@@ -6,11 +6,11 @@ const Home: NextPage = () => {
     <>
       <h1 className="title">
         Welcome to{" "}
-        <a className="text-blue-500" href="https://nextjs.org">
+        <a className="text-blue-500 underline hover:opacity-50" href="https://nextjs.org">
           Next.js
         </a>{" "}
         +{" "}
-        <a className="text-blue-500" href="https://tailwindcss.com/">
+        <a className="text-blue-500 underline hover:opacity-50" href="https://tailwindcss.com/">
           TailwindCSS!
         </a>
       </h1>
