@@ -5,17 +5,12 @@ import SvgIcon from "@mui/material/SvgIcon";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import MenuIcon from "@mui/icons-material/Menu";
-
-import IconButton, { IconButtonProps } from "@mui/material/IconButton";
+import IconButton from "@mui/material/IconButton";
 import { PropTypes } from "@mui/material";
 
 import { routes } from "@bin/constants";
 
 import Logo from "../../public/logo.svg";
-
-interface BurgerNavProps extends IconButtonProps {
-  openDrawer?: boolean;
-}
 
 const OBSERVE_SCROLL_HEIGHT = 80;
 
