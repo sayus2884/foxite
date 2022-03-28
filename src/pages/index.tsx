@@ -1,10 +1,5 @@
 import type { NextPage } from "next";
 import { HTMLAttributes } from "react";
-import Link from "next/link";
-
-import { SvgIconProps } from "@mui/material/SvgIcon";
-import Button from "@mui/material/Button";
-import Paper from "@mui/material/Paper";
 
 interface ResourceCardProps extends HTMLAttributes<HTMLElement> {
   title: string;
@@ -72,7 +67,7 @@ const Home: NextPage = () => {
             <p>Start adding and customizing components with Material UI.</p>
           </ResourceCard>
           <ResourceCard
-            title="React Typescript Cheetsheet"
+            title="React Typescript Cheat Sheet"
             url="https://react-typescript-cheatsheet.netlify.app/">
             <p>
               Confused on how to use Typescript with React? Here's a cheat sheet on how to use it in
