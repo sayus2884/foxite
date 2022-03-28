@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://nextjs.org">
-    <img src="/public/logo.svg" height="128" alt="Foxite Logo">
+    <img src="/public/android-chrome-192x192.png" height="120" alt="Foxite Logo">
     <h1 align="center">Foxite</h1>
   </a>
 </p>
@@ -14,7 +14,7 @@
   </a>
 </p>
 
-Foxite is a React project boilerplate that leverages features from Typescript, Next JS, MUI, and Tailwind CSS so you can focus on building your web app and deploy it with little to no hassle.
+Foxite is a React project boilerplate that leverages features from Typescript, Next JS, MUI, and Tailwind CSS so you can focus on building your web app with an already built foundation and deploy it with little to no hassle.
 
 ## Getting Started
 
