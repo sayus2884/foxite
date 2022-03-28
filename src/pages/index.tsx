@@ -1,52 +1,86 @@
 import type { NextPage } from "next";
+import { HTMLAttributes } from "react";
+import Link from "next/link";
+
+import { SvgIconProps } from "@mui/material/SvgIcon";
+import Button from "@mui/material/Button";
+import Paper from "@mui/material/Paper";
+
+interface ResourceCardProps extends HTMLAttributes<HTMLElement> {
+  title: string;
+  url: string;
+}
+
+const ResourceCard: React.FC<ResourceCardProps> = ({ children, title, url }) => {
+  return (
+    <a
+      href={url}
+      target="blank"
+      rel="noopener"
+      className="grid auto-rows-max gap-3 md:gap-5 p-8 items-center border border-neutral-400 rounded transition-colors hover:border-foxite hover:text-foxite min-h-[230px]">
+      <h2 className="text-2xl font-bold uppercase">{title}</h2>
+      {children}
+    </a>
+  );
+};
 
 const Home: NextPage = () => {
   return (
     <>
-      <h1 className="title">
-        Welcome to{" "}
-        <a className="text-blue-500 underline hover:opacity-50" href="https://nextjs.org">
-          Next.js
-        </a>{" "}
-        +{" "}
-        <a className="text-blue-500 underline hover:opacity-50" href="https://tailwindcss.com/">
-          TailwindCSS!
-        </a>
-      </h1>
+      <section className="section-px pb-10 pt-5 md:pt-20 flex flex-col items-center center gap-5">
+        <h1 className="uppercase text-6xl md:text-7xl max-w-[22ch] tracking">
+          <span className="text-2xl lg:text-3xl tracking-normal">The React Boilerplate to</span>
+          <br />
+          Build & Deploy Fast
+        </h1>
+        <p className="max-w-[56ch] md:text-xl lg:text-2xl lg:font-light">
+          Leverage features such as SEO, customizeable components, intuitive designing and more from{" "}
+          <span className="font-bold">Next JS</span>, <span className="font-bold">MUI</span>, and{" "}
+          <span className="font-bold">Tailwind CSS</span>.
+        </p>
+      </section>
 
-      <p>
-        Get started by editing <code>src/pages/index.tsx</code> or{" "}
-        <code>src/styles/globals.css</code>
-      </p>
+      <section className="section-px flex flex-col gap-10 py-5 md:py-20 justify-center lg:max-w-[1000px] lg:mx-auto">
+        <p className="md:text-xl">
+          You can start developing by editing{" "}
+          <span className="font-bold">./src/pages/index.tsx</span>. Or check out these useful
+          resources and documentations:
+        </p>
 
-      <div className="grid md:grid-cols-2 w-full items-ceter justify-center max-w-[800px]">
-        <a href="https://nextjs.org/docs" className="card">
-          <h2>NextJs Documentation &rarr;</h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+        <div className="grid md:grid-cols-2 gap-5">
+          <ResourceCard
+            title="New to Web Development?"
+            url="https://nextjs.org/learn/foundations/about-nextjs?utm_source=next-site&utm_medium=nav-cta&utm_campaign=next-website">
+            <p>Learn to create a web app from Javascript to React to Next JS.</p>
+          </ResourceCard>
 
-        <a href="https://tailwindcss.com/docs/installation" className="card">
-          <h2>TailwindCSS Documentation &rarr;</h2>
-          <p>Find in-depth information about TailwindCSS features and plugins.</p>
-        </a>
+          <ResourceCard
+            title="Master CSS, Master Tailwind CSS"
+            url="https://www.youtube.com/channel/UCJZv4d5rbIKd4QHMPkcABCw">
+            <p>
+              Check out Kevin Powell's Youtube channel and learn CSS concepts, tips, and tricks.
+            </p>
+          </ResourceCard>
 
-        <a href="https://nextjs.org/learn" className="card">
-          <h2>Learn &rarr;</h2>
-          <p>Learn about Next.js in an interactive course with quizzes!</p>
-        </a>
+          <ResourceCard
+            title="Explore Tailwind CSS"
+            url="https://tailwindcss.com/docs/utility-first">
+            <p>Ready to get started with Tailwind CSS? Check out how to use it.</p>
+          </ResourceCard>
 
-        <a href="https://github.com/vercel/next.js/tree/canary/examples" className="card">
-          <h2>Examples &rarr;</h2>
-          <p>Discover and deploy boilerplate example Next.js projects.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          className="card">
-          <h2>Deploy &rarr;</h2>
-          <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
-        </a>
-      </div>
+          <ResourceCard title="Explore MUI" url="https://mui.com/getting-started/usage/">
+            <p>Start adding and customizing components with Material UI.</p>
+          </ResourceCard>
+          <ResourceCard
+            title="React Typescript Cheetsheet"
+            url="https://react-typescript-cheatsheet.netlify.app/">
+            <p>
+              Confused on how to use Typescript with React? Here's a cheat sheet on how to use it in
+              your project.
+            </p>
+          </ResourceCard>
+        </div>
+      </section>
     </>
   );
 };
