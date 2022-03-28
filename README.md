@@ -34,7 +34,7 @@ You can start developing by modifying `./src/pages/index.tsx`.
 
 ## Maximizing Development Experience
 
-To use the tools effectively, use a code editor that supports snippets, auto completes, and tooltip docs. [VS Code](https://code.visualstudio.com/) is highly recommended which gives you a lot of extensions useful when coding. Here are some very useful extensions to have:
+To use the tools effectively, use a code editor that supports snippets, auto completes, and tooltip docs. A very good editor is [VS Code](https://code.visualstudio.com/) which has a lot of useful extenstions. Here are some noteable ones that can make development experience much more convenient:
 
 - JavaScript and TypeScript Nightly
 - ES7+ React/Redux/React-Native snippets
