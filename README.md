@@ -22,13 +22,15 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
+```
+or
+```bash
 yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `./src/pages/index.tsx`.
+You can start developing by modifying `./src/pages/index.tsx`.
 
 ## Maximizing Development Experience
 
