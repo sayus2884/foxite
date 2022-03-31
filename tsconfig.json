@@ -21,8 +21,7 @@
       "@components/*": ["./src/components/*"],
       "@sections/*": ["./src/sections/*"],
       "@hooks/*": ["./src/hooks/*"],
-      "@configs/*": ["./src/configs/*"],
-      "@bin/*": ["./src/bin/*"]
+      "@configs/*": ["configs/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

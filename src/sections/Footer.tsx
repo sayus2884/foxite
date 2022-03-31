@@ -5,7 +5,7 @@ import SvgIcon from "@mui/material/SvgIcon";
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
 
-import { routes } from "@bin/constants";
+import { routes } from "@configs/routes";
 
 import Logo from "../../public/logo.svg";
 
@@ -60,7 +60,7 @@ const Footer: React.FC<Props> = ({ className, ...props }) => {
           <p className="font-light">The React boilerplate to build & deploy fast.</p>
         </div>
 
-        <FooterNav className="md:row-span-2" title="Sitemap" routes={routes} />
+        <FooterNav className="md:row-span-2" title="Sitemap" routes={routes.pages} />
       </div>
 
       <div className="bg-black/50 section-px py-5 text-sm tracking-wider font-light lg:text-center uppercase">

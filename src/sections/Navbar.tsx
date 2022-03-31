@@ -1,20 +1,45 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
+import { PropTypes } from "@mui/material";
+import IconButton, { IconButtonProps } from "@mui/material/IconButton";
 import SvgIcon from "@mui/material/SvgIcon";
-import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import MenuIcon from "@mui/icons-material/Menu";
-import IconButton from "@mui/material/IconButton";
-import { PropTypes } from "@mui/material";
+import AppBar from "@mui/material/AppBar";
 
-import { routes } from "@bin/constants";
+import { routes } from "@configs/routes";
 
 import Logo from "../../public/logo.svg";
 
-const OBSERVE_SCROLL_HEIGHT = 80;
+interface BurgerNavProps extends IconButtonProps {
+  openDrawer?: boolean;
+}
 
-const Navbar: React.FC<React.HTMLAttributes<HTMLElement>> = ({ className }) => {
+const BurgerNav: React.FC<BurgerNavProps> = ({ className, openDrawer, onClick, ...props }) => {
+  return (
+    <IconButton
+      className={`${className}`}
+      onClick={onClick}
+      sx={{
+        ...(openDrawer && { display: "none" }),
+      }}
+      {...props}>
+      <MenuIcon />
+    </IconButton>
+  );
+};
+
+interface Props {
+  className?: string;
+  openDrawer?: boolean;
+  transparent?: boolean;
+  onToggleDrawer: () => void;
+}
+
+const Navbar: React.FC<Props> = ({ className, onToggleDrawer, openDrawer }) => {
+  const OBSERVE_SCROLL_HEIGHT = 80;
+
   const [barColor, setBarColor] = useState<PropTypes.Color | "transparent">("transparent");
   const [logoColor, setLogoColor] = useState<"primary" | "white">("primary");
   const [clientWindowHeight, setClientWindowHeight] = useState<number>(0);
@@ -46,10 +71,20 @@ const Navbar: React.FC<React.HTMLAttributes<HTMLElement>> = ({ className }) => {
         className={`${className} z-20 sticky top-0 transition-colors ${showShadow}`}
         color={barColor}>
         <Toolbar className="grid grid-flow-col auto-cols-fr items-center section-px">
+          <div className="hidden md:flex items-center" onClick={onToggleDrawer}>
+            <BurgerNav
+              className="hover:bg-transparent"
+              edge="start"
+              color="inherit"
+              aria-label="open drawer"
+              openDrawer={openDrawer}
+            />
+          </div>
+
           <Link href="/">
-            <div className="flex items-center cursor-pointer">
+            <div className="justify-self-center flex items-center">
               <SvgIcon
-                className="h-[35px] w-[35px]"
+                className="h-[35px] w-[35px] cursor-pointer"
                 color={logoColor}
                 viewBox="0 0 132.292 132.292"
                 component={Logo}
@@ -58,20 +93,11 @@ const Navbar: React.FC<React.HTMLAttributes<HTMLElement>> = ({ className }) => {
             </div>
           </Link>
 
-          <IconButton
-            className="sm:hidden justify-self-end"
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer">
-            <MenuIcon />
-          </IconButton>
-
-          <div className="hidden sm:flex justify-self-end gap-5 items-center">
-            <nav>
-              <ul className="flex gap-10">
-                {routes.map(({ name, route }, i) => (
-                  <li key={i}>
+          <div className="hidden md:flex justify-self-end gap-5 items-center">
+            <nav className="hidden lg:block">
+              <ul className="flex gap-5">
+                {routes.pages.map(({ name, route }) => (
+                  <li key={name}>
                     <Link href={route}>{name}</Link>
                   </li>
                 ))}
@@ -80,6 +106,16 @@ const Navbar: React.FC<React.HTMLAttributes<HTMLElement>> = ({ className }) => {
           </div>
         </Toolbar>
       </AppBar>
+
+      <BurgerNav
+        className="md:hidden fixed bottom-0 right-0 m-5 bg-red-500 hover:bg-red-600 shadow z-50"
+        size="large"
+        color="white"
+        edge="start"
+        aria-label="open drawer"
+        onClick={onToggleDrawer}
+        openDrawer={openDrawer}
+      />
     </>
   );
 };

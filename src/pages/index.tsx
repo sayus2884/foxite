@@ -53,7 +53,8 @@ const Home: NextPage = () => {
             title="Master CSS, Master Tailwind CSS"
             url="https://www.youtube.com/channel/UCJZv4d5rbIKd4QHMPkcABCw">
             <p>
-              Check out Kevin Powell's Youtube channel and learn CSS concepts, tips, and tricks.
+              Check out Kevin Powell&apos;s Youtube channel and learn CSS concepts, tips, and
+              tricks.
             </p>
           </ResourceCard>
 
@@ -70,8 +71,8 @@ const Home: NextPage = () => {
             title="React Typescript Cheat Sheet"
             url="https://react-typescript-cheatsheet.netlify.app/">
             <p>
-              Confused on how to use Typescript with React? Here's a cheat sheet on how to use it in
-              your project.
+              Confused on how to use Typescript with React? Here&apos;s a cheat sheet on how to use
+              it in your project.
             </p>
           </ResourceCard>
         </div>

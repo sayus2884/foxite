@@ -27,6 +27,26 @@
   .section-px {
     @apply px-[20px] md:px-[60px] lg:px-[100px];
   }
+
+  .scrollbar {
+    overflow: overlay;
+  }
+
+  .scrollbar::-webkit-scrollbar {
+    display: block;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-transparent;
+  }
+
+  .scrollbar:hover::-webkit-scrollbar-thumb {
+    @apply bg-gray-500;
+  }
 }
 
 html,
