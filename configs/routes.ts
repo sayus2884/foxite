@@ -4,6 +4,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import RoomServiceIcon from "@mui/icons-material/RoomService";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+import ScienceIcon from "@mui/icons-material/Science";
 
 export interface RouteProps {
   name: string;
@@ -18,6 +19,7 @@ const pages: RouteProps[] = [
   { name: "Services", route: "/#", icon: RoomServiceIcon },
   { name: "About", route: "/#", icon: HelpOutlineIcon },
   { name: "Contact", route: "/#", icon: LocalPhoneIcon },
+  { name: "Test", route: "/test", icon: ScienceIcon },
 ];
 
 export const routes = { pages };
