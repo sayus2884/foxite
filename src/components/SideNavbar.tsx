@@ -15,10 +15,9 @@ const SideNavbar: React.FC<DrawerProps> = ({ children, isOpen, width = 300, ...p
         width: isOpen ? `${width}px` : "0",
       }}
       open={isOpen}
-      variant="permanent"
       PaperProps={{
         classes: {
-          root: `transition-transform transition-[width] duration-300 relative sticky h-screen overflow-hidden ${
+          root: `transition-[width] relative sticky h-screen overflow-hidden ${
             isOpen ? "shadow-sm" : "border-0"
           }`,
         },

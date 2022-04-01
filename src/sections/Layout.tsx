@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 
-import SideNavbar from "@components/SideNavbar";
+const SideNavbar = dynamic(() => import("@components/SideNavbar"));
 import { PagesListItems } from "@components/NavListItems";
 
 import ToolbarHeader from "@sections/ToolbarHeader";
@@ -12,21 +13,24 @@ import Footer from "@sections/Footer";
 
 const Layout: React.FC = ({ children }) => {
   const [open, setOpen] = useState(false);
+  const [variant, setVariant] = useState<"temporary" | "permanent">("temporary");
 
   const handleToggleDrawer = () => {
     setOpen(!open);
   };
 
+  useEffect(() => setVariant("permanent"), []);
+
   return (
     <>
       <div className="flex bg-gray-200">
-        <SideNavbar isOpen={open} onClose={handleToggleDrawer}>
-          <div className={`w-full sm:w-[300px] lg:w-full overflow-hidden h-screen flex flex-col`}>
+        <SideNavbar isOpen={open} onClose={handleToggleDrawer} width={300} variant={variant}>
+          <div className="w-full sm:w-[300px] lg:w-full overflow-hidden h-screen flex flex-col">
             <ToolbarHeader
               className="border-b border-neutral-200"
               onToggleDrawer={handleToggleDrawer}
             />
-            <Box className={`relative grow`}>
+            <Box className="relative grow">
               <div className="absolute scrollbar inset-0 min-w-max w-full sm:w-[300px] lg:w-full">
                 <PagesListItems />
               </div>

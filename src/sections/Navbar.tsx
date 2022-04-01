@@ -69,10 +69,7 @@ const Navbar: React.FC<Props> = ({ className, onToggleDrawer, openDrawer }) => {
   return (
     <>
       <AppBar
-        className={`${className} z-20 sticky top-0 transition-colors ${showShadow}`}
-        classes={{
-          root: "shadow-none",
-        }}
+        className={`${className} z-20 top-0 transition-colors sticky ${showShadow}`}
         color={barColor}>
         <Toolbar className="grid grid-flow-col auto-cols-fr items-center section-px">
           <div className="flex items-center" onClick={onToggleDrawer}>
