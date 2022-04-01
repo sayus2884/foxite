@@ -21,7 +21,7 @@ const Layout: React.FC = ({ children }) => {
     <>
       <div className="flex bg-gray-200">
         <SideNavbar isOpen={open} onClose={handleToggleDrawer}>
-          <div className={`w-full sm:w-[300px] overflow-hidden h-screen flex flex-col`}>
+          <div className={`w-full sm:w-[300px] lg:w-full overflow-hidden h-screen flex flex-col`}>
             <ToolbarHeader
               className="border-b border-neutral-200"
               onToggleDrawer={handleToggleDrawer}

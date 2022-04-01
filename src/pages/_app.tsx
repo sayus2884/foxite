@@ -1,24 +1,28 @@
 import "../styles/globals.css";
+import "nprogress/nprogress.css";
+
+import Head from "next/head";
+import NextNProgress from "nextjs-progressbar";
 
 import { StyledEngineProvider } from "@mui/material/styles";
 import { ThemeProvider } from "@mui/material/styles";
 import { themeConfig } from "@configs/theme";
 
-import type { AppProps } from "next/app";
-import Head from "next/head";
-import Layout from "@sections/Layout";
+import { AppPropsWithLayout } from "@types";
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+  const getLayout = Component.getLayout || ((page) => page);
+
   return (
     <>
       <Head>
         <title>Build & Deploy Fast with Foxite</title>
       </Head>
-      <StyledEngineProvider injectFirst>
+      <StyledEngineProvider>
         <ThemeProvider theme={themeConfig}>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
+          <NextNProgress />
+
+          {getLayout(<Component {...pageProps} />)}
         </ThemeProvider>
       </StyledEngineProvider>
     </>

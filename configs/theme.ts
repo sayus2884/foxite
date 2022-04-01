@@ -38,6 +38,14 @@ declare module "@mui/material/SvgIcon" {
   }
 }
 
+export const MuiDrawer = {
+  styleOverrides: {
+    root: {
+      width: "0",
+    },
+  },
+};
+
 export const foxite = {
   palette: {
     primary: {
@@ -62,6 +70,10 @@ export const themeConfig = createTheme({
       contrastText: "#fff",
     },
     ...foxite.palette,
+  },
+
+  components: {
+    MuiDrawer,
   },
 });
 

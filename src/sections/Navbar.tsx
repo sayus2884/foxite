@@ -43,6 +43,7 @@ const Navbar: React.FC<Props> = ({ className, onToggleDrawer, openDrawer }) => {
   const [barColor, setBarColor] = useState<PropTypes.Color | "transparent">("transparent");
   const [logoColor, setLogoColor] = useState<"primary" | "white">("primary");
   const [clientWindowHeight, setClientWindowHeight] = useState<number>(0);
+  const [showShadow, setShowShadow] = useState("shadow-none");
 
   const handleScroll = () => {
     setClientWindowHeight(window.scrollY);
@@ -57,21 +58,24 @@ const Navbar: React.FC<Props> = ({ className, onToggleDrawer, openDrawer }) => {
     if (clientWindowHeight < OBSERVE_SCROLL_HEIGHT) {
       setBarColor("transparent");
       setLogoColor("primary");
+      setShowShadow("shadow-none");
     } else {
       setBarColor("primary");
       setLogoColor("white");
+      setShowShadow("shadow");
     }
   }, [clientWindowHeight]);
-
-  const showShadow = clientWindowHeight < OBSERVE_SCROLL_HEIGHT ? "shadow-none" : "shadow";
 
   return (
     <>
       <AppBar
         className={`${className} z-20 sticky top-0 transition-colors ${showShadow}`}
+        classes={{
+          root: "shadow-none",
+        }}
         color={barColor}>
         <Toolbar className="grid grid-flow-col auto-cols-fr items-center section-px">
-          <div className="hidden md:flex items-center" onClick={onToggleDrawer}>
+          <div className="flex items-center" onClick={onToggleDrawer}>
             <BurgerNav
               className="hover:bg-transparent"
               edge="start"

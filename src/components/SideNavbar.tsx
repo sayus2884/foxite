@@ -10,7 +10,7 @@ interface DrawerProps extends MuiDrawerProps {
 const SideNavbar: React.FC<DrawerProps> = ({ children, isOpen, width = 300, ...props }) => {
   return (
     <Drawer
-      className={`transition-[width]`}
+      className={`transition-[width] `}
       sx={{
         width: isOpen ? `${width}px` : "0",
       }}

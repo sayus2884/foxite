@@ -49,6 +49,10 @@
   }
 }
 
+.MuiAppBar {
+  @apply shadow-none;
+}
+
 html,
 body {
   scroll-behavior: smooth;

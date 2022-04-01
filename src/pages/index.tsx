@@ -1,5 +1,7 @@
-import type { NextPage } from "next";
-import { HTMLAttributes } from "react";
+import { HTMLAttributes, ReactElement } from "react";
+import Layout from "@sections/Layout";
+
+import { NextPageWithLayout } from "@types";
 
 interface ResourceCardProps extends HTMLAttributes<HTMLElement> {
   title: string;
@@ -19,7 +21,7 @@ const ResourceCard: React.FC<ResourceCardProps> = ({ children, title, url }) => 
   );
 };
 
-const Home: NextPage = () => {
+const Home: NextPageWithLayout = () => {
   return (
     <>
       <section className="section-px pb-10 pt-5 md:pt-20 flex flex-col items-center center gap-5">
@@ -79,6 +81,10 @@ const Home: NextPage = () => {
       </section>
     </>
   );
+};
+
+Home.getLayout = function getLayout(page: ReactElement) {
+  return <Layout>{page}</Layout>;
 };
 
 export default Home;
