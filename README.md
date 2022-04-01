@@ -16,6 +16,9 @@
 
 Foxite is a React project boilerplate that leverages features from Typescript, Next JS, MUI, and Tailwind CSS so you can focus on building your web app with an already built foundation and deploy it with little to no hassle.
 
+## Demo
+https://foxite-skeleton.vercel.app/
+
 ## Getting Started
 
 First, run the development server:
